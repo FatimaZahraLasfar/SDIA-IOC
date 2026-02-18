@@ -1,0 +1,2 @@
+net.lasfar.ext.DaoImplV2
+net.lasfar.metier.MetierImpl
