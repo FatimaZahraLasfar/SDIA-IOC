@@ -1,8 +1,14 @@
 package net.lasfar.metier;
 
 import net.lasfar.dao.IDao;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
+@Service("metier")
 public class MetierImpl implements IMetier {
+    //@Qualifier("d")
     private IDao dao; // Coublage faible
 
     /**
@@ -10,11 +16,9 @@ public class MetierImpl implements IMetier {
      * un objet d'une classe qui implément l'interface IDO
      * au moment de l'instantiation
      */
-    public MetierImpl(IDao dao) {
-        this.dao = dao;
-    }
 
-    public MetierImpl() {
+    public MetierImpl(@Qualifier("d2") IDao dao) {
+        this.dao = dao;
     }
 
     @Override
